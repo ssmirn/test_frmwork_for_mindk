@@ -1,0 +1,154 @@
+<cfg>
+    <host>localhost</host>
+    <baseUrl>/TestFramework/web/index.php</baseUrl>
+    <connDB>../framework/app/data/students.db</connDB>
+    
+    <default>
+        <action>index</action>
+        <view>defaultpage</view>
+    </default>
+    
+    <startRoute>home</startRoute>
+    
+    <excepPage>/TestFramework/framework/exceptions/defExcep.php</excepPage>
+    
+    <route name="home">
+        <controller name="StudentController"/>
+        <action name="index"> 
+            <param limitationrule="/^[0-9]+$/" defaultvalue="0">id_group</param>  
+            <param limitationrule="/^[0-9]+$/" defaultvalue="1">number_page_student</param>
+        </action>
+        <view>home</view>
+    </route>
+    
+    <route name="addfaculty">
+        <controller name="FacultyController"/>
+        <action name="insert"> 
+            <param defaultvalue="null">faculty_name</param>  
+            <param limitationrule="/(start|Сохранить|Отмена)$/" defaultvalue="start">submit_val</param>   
+        </action>
+        <view>faculty</view>
+        <status value="RES_ACT_OK"> 
+            <redirect>listfaculty</redirect>
+        </status>
+     </route>
+     
+     <route name="editfaculty">
+        <controller name="FacultyController"/>
+        <action name="update"> 
+            <param limitationrule="/^[0-9]+$/">id</param>  
+            <param defaultvalue="null">faculty_name</param>  
+            <param limitationrule="/(edit|Сохранить|Отмена)$/" defaultvalue="edit">submit_val</param>   
+        </action>
+        <view>faculty</view>
+        <status value="RES_ACT_OK"> 
+            <redirect>listfaculty</redirect>
+        </status>
+     </route>
+     
+     <route name="deletefaculty">
+        <controller name="FacultyController"/>
+         <action name="delete"> 
+            <param limitationrule="/^[0-9]+$/">id</param>  
+        </action>
+        <view>facultylist</view>
+        <status value="RES_ACT_OK"> 
+            <redirect>listfaculty</redirect>
+        </status>
+     </route>
+    
+    <route name="listfaculty">
+        <controller name="FacultyController"/>
+        <action name="listFaculty"/> 
+        <view>facultylist</view>
+    </route>
+    
+     <route name="addgroup">
+        <controller name="GroupController"/>
+        <action name="insert"> 
+            <param limitationrule="/^[0-9]+$/" defaultvalue="0">id_facul</param> 
+            <param defaultvalue="null">group_name</param>  
+            <param limitationrule="/(start|Сохранить|Отмена)$/" defaultvalue="start">submit_val</param>   
+        </action>
+        <view>group</view>
+        <status value="RES_ACT_OK"> 
+            <redirect>listgroup</redirect>
+        </status>
+     </route>
+     
+     <route name="editgroup">
+        <controller name="GroupController"/>
+        <action name="update"> 
+            <param limitationrule="/^[0-9]+$/">id</param> 
+            <param limitationrule="/^[0-9]+$/" defaultvalue="0">id_facul</param> 
+            <param defaultvalue="null">group_name</param> 
+            <param limitationrule="/(edit|Сохранить|Отмена)$/" defaultvalue="edit">submit_val</param>   
+        </action>
+        <view>group</view>
+        <status value="RES_ACT_OK"> 
+            <redirect>listgroup</redirect>
+        </status>
+     </route>
+     
+     <route name="deletegroup">
+        <controller name="GroupController"/>
+         <action name="delete"> 
+            <param limitationrule="/^[0-9]+$/">id</param>  
+        </action>
+        <view>grouplist</view>
+        <status value="RES_ACT_OK"> 
+            <redirect>listgroup</redirect>
+        </status>
+     </route>
+    
+    <route name="listgroup">
+        <controller name="GroupController"/>
+        <action name="listGroup"/> 
+        <view>grouplist</view>
+    </route>
+    
+    <route name="addstudent">
+        <controller name="StudentController"/>
+        <action name="insert"> 
+            <param limitationrule="/^[0-9]+$/" defaultvalue="0">id_group</param> 
+            <param defaultvalue="null">s_name</param> 
+            <param defaultvalue="null">f_name</param> 
+            <param limitationrule="/(female|male)$/" defaultvalue="female">stud_sx</param> 
+            <param defaultvalue="18">age</param> 
+            <param limitationrule="/(start|Сохранить|Отмена)$/" defaultvalue="start">submit_val</param>  
+        </action>
+        <view>student</view>
+        <status value="RES_ACT_OK"> 
+            <redirect>home</redirect>
+        </status>
+     </route>
+    
+    <route name="editstudent">
+        <controller name="StudentController"/>
+        <action name="update"> 
+            <param limitationrule="/^[0-9]+$/">id</param> 
+            <param limitationrule="/^[0-9]+$/" defaultvalue="0">id_group</param> 
+            <param defaultvalue="null">s_name</param> 
+            <param defaultvalue="null">f_name</param> 
+            <param limitationrule="/(female|male)$/" defaultvalue="female">stud_sx</param> 
+            <param defaultvalue="18">age</param> 
+            <param limitationrule="/(edit|Сохранить|Отмена)$/" defaultvalue="edit">submit_val</param>   
+        </action>
+        <view>student</view>
+        <status value="RES_ACT_OK"> 
+            <redirect>home</redirect>
+        </status>
+     </route>
+     
+     <route name="deletestudent">
+        <controller name="StudentController"/>
+         <action name="delete"> 
+            <param limitationrule="/^[0-9]+$/">id</param>  
+        </action>
+        <view value="RES_ACT_ERR">home</view>
+        <status value="RES_ACT_OK"> 
+            <redirect>home</redirect>
+        </status>
+     </route>
+    
+</cfg>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Группа</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+     <body>
+        <form method="post">
+            <table>
+                <tr>
+                    <td align="left"> Факультет: </td>
+                    <td align="left"> {cmb_faq} </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td align="left"> Группа: </td>
+                    <td align="left"> <input type="text" name="group_name" value="{val_group_name}" size="20" maxlength="12"/> </td>
+                    <td align="right"><span style="color: red;">{msg_validate}</span></td>
+                </tr>
+                <tr> 
+                    <td colspan="2" align="right">
+                        <hr>
+                        <input type="submit" name="submit_val" value="Сохранить" />  
+                        <input type="submit" name="submit_val" value="Отмена" /> 
+                    </td> 
+                </tr>
+            </table>
+            <input type="hidden" name="id" value="{id}" />
+        </form>
+    </body>
+</html>

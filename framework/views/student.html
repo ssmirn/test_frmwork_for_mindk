@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Студент</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form method="post">
+            <table>
+                <tr valign="top">
+                    <td>
+                        Выберите группу: <br>
+                        {val_group_name}
+                    </td>
+                    <td>
+                         <table>
+                            <tr>
+                                <td align="left"> Фамилия: </td>
+                                <td align="left"> <input type="text" name="s_name" value="{s_name}" size="30" maxlength="64"/> </td>
+                            </tr>
+                            <tr>
+                                <td align="left"> Имя: </td>
+                                <td align="left"> <input type="text" name="f_name" value="{f_name}" size="30" maxlength="64"/> </td>
+                            </tr>
+                             <tr>
+                                <td align="left"> Пол: </td>
+                                <td align="left"> 
+                                    {stud_sx}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left"> Возраст: </td>
+                                <td align="left"> <input type="text" name="age" value="{age}" size="1" maxlength="2"/> </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr> 
+                    <td colspan="2" align="right">
+                        <hr>
+                        <input type="submit" name="submit_val" value="Сохранить" />  
+                        <input type="submit" name="submit_val" value="Отмена" /> 
+                    </td> 
+                </tr>
+            </table>
+           <span style="color: red;">{msg_validate}</span>
+            <input type="hidden" name="id" value="{id}" />
+        </form>
+    </body>
+</html>

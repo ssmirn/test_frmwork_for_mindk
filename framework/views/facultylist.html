@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Факультеты</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form>
+            <a href="home">« На главную страницу</a>
+            <br>
+            <table  width="45%">
+                <tr>
+                    <td align="right"><a href="addfaculty">Создать факультет</a></td>
+                </tr>
+            </table>
+            <table border="1" cellpadding="3" cellspacing="0" rules="all" width="45%">
+                <tr>
+                    <th>№</th>
+                    <th>Наименования факультетов</th>
+                    <th>Действия</th>
+                </tr>
+                {tblfacul}
+            </table>
+            <br>
+            <span style="color: red;">{msg_validate}</span>
+        </form>
+    </body>
+</html>

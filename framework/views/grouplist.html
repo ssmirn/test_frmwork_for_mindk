@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Группы</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            td { font-weight: bold }
+            tbody .sub td { padding-left: 30px; font-weight:normal  }
+        </style>
+    </head>
+    <body>
+        <form>
+            <a href="home">« На главную страницу</a>
+            <br>
+            <table  width="35%">
+                <tr>
+                    <td align="right" ><a href="addgroup"><span style="font-weight:normal;">Создать группу</span></a></td>
+                </tr>
+            </table>
+            
+            <table  border="1" cellpadding="3" cellspacing="0" rules="all" width="35%">
+                 <tr>
+                    <th>Факультеты/группы</th>
+                    <th>Действия</th>
+                </tr>
+                {tblgroups}
+            </table>
+            <br>
+            <span style="color: red;">{msg_validate}</span>
+        </form>
+    </body>
+</html>

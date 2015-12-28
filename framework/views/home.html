@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Студенты</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            tbody .sub td { padding-left: 30px; }
+        </style>
+    </head>
+    <body>
+        <form>
+            <table  width="100%">
+                <tr>
+                    <td align="left" width="20%"><a href="listfaculty">Факультеты</a>
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="listgroup">Группы</a></td>
+                    <td align="left" ><br><a href="addstudent?id_group={id_group}">Создать студента</a></td>
+                </tr>
+                <tr>
+                    <td align="left"  valign="top" width="20%" >
+                        <table border="1"  cellpadding="3" cellspacing="0" rules="group" width="100%">
+                            {tblgroups}
+                        </table>
+                    </td> 
+                    <td align="left"  valign="top" >
+                        <table border="1" cellpadding="3" cellspacing="0" rules="all" width="100%">
+                            <tr align="center">
+                                <th>№</th>
+                                <th>Студенты {name_group}</th>
+                                <th>Пол</th>
+                                <th>Возраст</th>
+                                <th>Действия</th>
+                            </tr>
+                            {tblstudents}
+                        </table>
+                        <table width="100%"><tr><td align="center"> {number_page_student} </td></tr></table> 
+                    </td>  
+                </tr>
+            </table>
+            <br>
+            <span style="color: red;">{msg_validate}</span>
+            <center><small>*Тестовое задание для MindK</small></center>
+        </form>
+    </body>
+</html>
